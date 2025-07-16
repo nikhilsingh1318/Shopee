@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #460909ce;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* menu */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo a {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+nav .nav-links li a {
+    color: #fff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+    color: #ff5a5f;
+    border-bottom: 2px solid #ff5a5f;
+}
+
+nav .search-bar {
+    position: relative;
+}
+
+nav .search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+nav .search-bar input:focus {
+    width: 250px;
+}
+
+nav .search-bar button {
+    position: absolute;
+    right: -1px;
+    top: 0;
+    border: none;
+    background-color: #ff5a5f;
+    padding: 9px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+}
+
+nav .search-bar button:hover {
+    background-color: #e0494b;
+}
+
+nav .login-btn {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav .login-btn:hover {
+    background-color: #e0494b;
+}
+
+
+/* banner */
+
+.hero {
+    background: url('https://img.freepik.com/free-photo/shirt-mockup-concept-with-plain-clothing_23-2149448749.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    opacity: 0.89;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.hero .btn {
+    background-color: #ff5a5f;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #e0494b;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+
+
+/* products */
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.product-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-details {
+    padding: 16px;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.product-desc {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #27ae60;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cart-btn {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+.cart-btn:hover {
+    background-color: #e65c5c;
+}
+
+.buy-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.buy-btn:hover {
+    background-color: #27ae60;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+
+/* footer */
+
+.footer {
+    background-color: #0f0f0f;
+    margin-top: 20px;
+    color: #ddd;
+    padding: 60px 20px 30px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: auto;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1 1 250px;
+    min-width: 220px;
+}
+
+.footer-column h2,
+.footer-column h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-column p,
+.footer-column ul li a {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column a:hover {
+    color: #e0494b;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background-color: #222;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #e0494b;
+}
+
+
+.newsletter button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    border-radius: 5px;
+
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-bottom a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #e0494b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .newsletter input[type="email"] {
+        width: 100%;
+    }
+}

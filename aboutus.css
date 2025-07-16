@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* menu */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo a {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+nav .nav-links li a {
+    color: #fff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+    color: #ff5a5f;
+    border-bottom: 2px solid #ff5a5f;
+}
+
+nav .search-bar {
+    position: relative;
+}
+
+nav .search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+nav .search-bar input:focus {
+    width: 250px;
+}
+
+nav .search-bar button {
+    position: absolute;
+    right: -1px;
+    top: 0;
+    border: none;
+    background-color: #ff5a5f;
+    padding: 9px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+}
+
+nav .search-bar button:hover {
+    background-color: #e0494b;
+}
+
+nav .login-btn {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav .login-btn:hover {
+    background-color: #e0494b;
+}
+
+
+/* banner */
+
+.hero {
+    background: url('https://img.freepik.com/free-photo/shirt-mockup-concept-with-plain-clothing_23-2149448749.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    opacity: 0.89;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.hero .btn {
+    background-color: #ff5a5f;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #e0494b;
+}
+
+
+/* main content */
+
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: #222;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.3rem;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.offer-list li::before {
+    content: "✔️";
+    margin-right: 8px;
+    color: #28a745;
+}
+
+.features li {
+    background: #f1f1f1;
+    margin: 6px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.features li:hover {
+    background: #e0e0e0;
+}
+
+.vision-mission {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.vision-mission>div {
+    flex: 1;
+    min-width: 280px;
+}
+
+.testimonials blockquote {
+    font-style: italic;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid #999;
+    background-color: #fafafa;
+}
+
+.testimonials span {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.testimonials blockquote:hover,
+.features li:hover {
+    background-color: #e8f5e9;
+    transition: all 0.3s ease;
+}
+
+.container section:last-of-type {
+    background-color: #f7f7f7;
+    border-left: 4px solid #4caf50;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.site-footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+
+/* footer */
+
+.footer {
+    background-color: #0f0f0f;
+    margin-top: 20px;
+    color: #ddd;
+    padding: 60px 20px 30px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: auto;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1 1 250px;
+    min-width: 220px;
+}
+
+.footer-column h2,
+.footer-column h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-column p,
+.footer-column ul li a {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column a:hover {
+    color: #e0494b;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background-color: #222;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #e0494b;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    border-radius: 5px;
+
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-bottom a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #e0494b;
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .newsletter input[type="email"] {
+        width: 100%;
+    }
+}

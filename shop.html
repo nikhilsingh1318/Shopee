@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee - Online Clothing Store</title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+
+<body>
+
+    <!-- menu -->
+
+    <nav>
+        <div class="logo">
+            <a href="#" style="font-family: cursive;">Shopee</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <button type="submit">Search</button>
+        </div>
+        <button class="login-btn">Login</button>
+    </nav>
+
+    <!-- banner -->
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Shopee</h1>
+            <p>Your one-stop shop for the latest trends in fashion</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+
+    <!-- products -->
+
+    <h1>Shopee - Products</h1>
+    <div class="products-container" id="productContainer">
+    </div>
+
+    <script>
+        const productList = [
+            {
+                title: "Sports Shoes",
+                price: "$49.99",
+                image: "https://redtape.com/cdn/shop/files/RSO3634_1.jpg?v=1741350436"
+            },
+            {
+                title: "Leather Bag",
+                price: "$89.99",
+                image: "https://5.imimg.com/data5/SELLER/Default/2020/12/RC/JB/NY/54930306/office-leather-bag.JPG"
+            },
+            {
+                title: "Smart Watch",
+                price: "$129.99",
+                image: "https://m.media-amazon.com/images/I/61ZjlBOp+rL.jpg"
+            },
+            {
+                title: "T-shirt",
+                price: "$129.99",
+                image: "https://chriscross.in/cdn/shop/files/ChrisCrossRoyalblueCottontshirtmen.jpg?v=1740994595"
+            },
+            {
+                title: "Shirt",
+                price: "$129.99",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8fVGe_do2ll9b7n_dMP7QDLEPZFzKesm7Wg&s"
+            },
+            {
+                title: "Shorts",
+                price: "$129.99",
+                image: "https://media.istockphoto.com/id/697913308/photo/orange-men-shorts-for-swimming.jpg?s=612x612&w=0&k=20&c=Ta47ejxSIVtknPGGZ92BB_KGI9bLLZuU_C0EaOXl0AA="
+            },
+            {
+                title: "pant",
+                price: "$129.99",
+                image: "https://valuesilks.com/wp-content/uploads/2024/08/5-8.jpg"
+            },
+            {
+                title: "jens",
+                price: "$129.99",
+                image: "https://tiimg.tistatic.com/fp/1/007/158/mas-jens-heavy-knitted-denim-stretchable-blue-jeans-for-men-683.jpg"
+            },
+            {
+                title: "Sneakers",
+                price: "$129.99",
+                image: "https://5.imimg.com/data5/ANDROID/Default/2022/2/MG/RD/YS/73718625/product-jpeg.jpg"
+            },
+            {
+                title: "lower",
+                price: "$129.99",
+                image: "https://5.imimg.com/data5/LB/OK/CC/SELLER-51060045/mens-lower.jpg"
+            },
+            {
+                title: "Sweatshirt",
+                price: "$129.99",
+                image: "https://shop.vogue.com/cdn/shop/files/RustyRedSweatshirt1.png?v=1695214728"
+            },
+            {
+                title: "tank top",
+                price: "$129.99",
+                image: "https://www.shutterstock.com/image-photo/front-tank-top-on-white-260nw-2393474019.jpg"
+            },
+            {
+                title: "legging",
+                price: "$129.99",
+                image: "https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/U36339s2.jpg?im=Resize,width=750"
+            },
+            {
+                title: "skirt",
+                price: "$129.99",
+                image: "https://static.vecteezy.com/system/resources/thumbnails/020/137/970/small_2x/1820-pink-skirt-isolated-on-a-transparent-background-photo.jpg"
+            },
+            {
+                title: "jacket",
+                price: "$129.99",
+                image: "https://media.istockphoto.com/id/163208487/photo/male-coat-isolated-on-the-white.jpg?s=612x612&w=0&k=20&c=3Sdq5xnVS2jOYPNXI6JLwAumzyelcP_VgKVW0MVUhwo="
+            },
+            {
+                title: "coat",
+                price: "$129.99",
+                image: "https://www.collinsdictionary.com/images/full/coat_85116334_1000.jpg"
+            },
+            {
+                title: "hoodie",
+                price: "$129.99",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdmwSk2QQlHTce52dojY-cgnJtAUrxf5DQBQ&s"
+            },
+            {
+                title: "blazer",
+                price: "$129.99",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpl0-pp4jGIKfZfJjbBJAgzGQfQCHtOAERGg&s"
+            },
+            {
+                title: "Cardigan",
+                price: "$129.99",
+                image: "https://assets.ajio.com/medias/sys_master/root/20240914/qEbd/66e4bd691d763220fae75a7e/-473Wx593H-700421606-beige-MODEL.jpg"
+            },
+            {
+                title: "kurta",
+                price: "$129.99",
+                image: "https://bhasinbrothers.com/cdn/shop/products/WhatsAppImage2022-12-26at4.47.30PM_1800x1800.jpg?v=1742577424"
+            },
+            {
+                title: "saree",
+                price: "$129.99",
+                image: "https://t4.ftcdn.net/jpg/08/27/22/07/360_F_827220796_mXrTTYh7jlYoycgLZFgX4f48VzAvYtIw.jpg"
+            },
+            {
+                title: "sherwani",
+                price: "$129.99",
+                image: "https://www.waliajones.com/cdn/shop/files/self-embossed-jamawar-sherwani-for-groom-30347486101598_05426a4b-5ecc-4bc2-b449-e4cbd9ee8027.jpg?v=1728842123"
+            },
+            {
+                title: "Lehenga",
+                price: "$129.99",
+                image: "https://bhasinbrothers.com/cdn/shop/files/IMG_3228.jpg?v=1742576625&width=1080"
+            },
+            {
+                title: "duppata",
+                price: "$129.99",
+                image: "https://medias.utsavfashion.com/media/catalog/product/cache/1/image/500x/040ec09b1e35df139433887a97daa66f/b/a/bandhej-art-silk-dupatta-in-shaded-fuchsia-v1-bnj437.jpg"
+            },
+            {
+                title: "cape top",
+                price: "$129.99",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6QXh06UjMfdbXkH8pQs5Tgq2RXT2QQEwWgw&s"
+            },
+            {
+                title: "jogger",
+                price: "$129.99",
+                image: "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/24696820/2023/8/28/171f344c-7498-455b-a62a-59ee18bd9b781693220556208Twilljoggers1.jpg"
+            },
+            {
+                title: "bell bottom",
+                price: "$129.99",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS23qiMkRlnZzlH_B2cVdnLeTJjiq32Yda2Jw&s"
+            },
+            {
+                title: "poncho",
+                price: "$129.99",
+                image: "https://contents.mediadecathlon.com/p2393309/966d9acbce8e559977cf3c42ce6b3177/p2393309.jpg?format=auto&quality=70&f=2520x0"
+            },
+            {
+                title: "gown",
+                price: "$129.99",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIeaFEcAi_0_ETFBhOvMejiD3eDb0XVkKojw&s"
+            },
+            {
+                title: "Nehru Jacket ",
+                price: "$129.99",
+                image: "https://images.meesho.com/images/products/427241397/chb3k_512.webp"
+            },
+
+        ];
+
+        const container = document.getElementById('productContainer');
+
+        productList.forEach((product, index) => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.style.animationDelay = `${index * 0.05}s`;
+
+            card.innerHTML = `
+    <div class="product-image">
+      <img src="${product.image}" alt="${product.title}">
+    </div>
+    <div class="product-details">
+      <div class="product-title">${product.title}</div>
+      <div class="product-price">${product.price}</div>
+      <div class="btn-group">
+        <button class="btn cart-btn">Add to Cart</button>
+        <button class="btn buy-btn">Buy Now</button>
+      </div>
+    </div>
+  `;
+            container.appendChild(card);
+        });
+
+    </script>
+
+
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-column brand">
+                <h2>Shopee</h2>
+                <p>Style meets affordability. Explore the best in fashion with Shopee – from streetwear to classics.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="facebook"></i></a>
+                    <a href="#"><i class="instagram"></i></a>
+                    <a href="#"><i class="twitter"></i></a>
+                    <a href="#"><i class="pinterest"></i></a>
+                    <a href="#"><i class="youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column shop">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Men's Clothing</a></li>
+                    <li><a href="#">Women's Clothing</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Footwear</a></li>
+                    <li><a href="#">Winter Wear</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@shopee.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Address: 123 Fashion Street, Delhi, India</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shopee. Designed with ❤️ for fashion lovers. | <a href="#">Privacy Policy</a> | <a
+                    href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
